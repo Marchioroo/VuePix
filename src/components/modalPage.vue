@@ -1,9 +1,10 @@
 <template>
+    <transition name="fade" @before-enter="beforeEnter" @leave="leave">
   <div class="modal" v-if="isOpen">
     <div class="modal-content w-full h-full md:h-2/3 xl:h-full md:w-2/3 bg-white rounded shadow flex flex-col p-4">
       
       <div class="icVoltar flex flex-row w-full p-3 mt-2">
-        <img src="../assets/ic/ic-Arrows-Tipe_1-Direction_Left.svg" class="size-6" @click="closeModal" alt="">
+        <img src="../assets/ic/ic-Arrows-Tipe_1-Direction_Left.svg" class="size-6 cursor-pointer" @click="closeModal" alt="">
         <h2 class="ml-2">Pix e saques</h2>
       </div>
       <hr class=" w-full">
@@ -37,6 +38,8 @@
       </form>
     </div>
   </div>
+</transition>
+
 </template>
 
 
@@ -154,7 +157,6 @@ export default {
 
 }
 
-.button {}
 
 hr {
   background-color: #E6E6E6;
@@ -174,4 +176,15 @@ input {
   padding: 7px 0px 7px 0px;
 
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
 </style>

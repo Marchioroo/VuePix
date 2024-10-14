@@ -1,12 +1,13 @@
 <template>
 
 
-  <div class="container mx-auto p-4 ">
+  <div class="container mx-auto p-4 cursor-pointer " >
     <div class="w-full h-0.5 w-full  bg-gray-200 justify-start w-full max- md:w-1/3 lg:w-[30%]" ></div>
-    <div class=" mt-3 flex items-center justify-start w-full md:w-1/3 lg:w-[30%]">
+    <div class=" mt-3 flex items-center justify-start w-full md:w-1/3 lg:w-[30%]" >
     <img src="../src/assets/ic/ic-pix.svg" class="mr-2 w-6 h-6">
   
-    <button @click="openModal" class=" text-black  rounded"> Pix e saques</button>
+    <button @click="openModal" class=" text-black rounded w-full flex flex-row justify-start"> Pix e saques </button>
+
     <img src="../src/assets/ic/ic-Arrows-Tipe_2-Direction_Right.svg" class="mr-2 ml-auto w-6 h-4">
     <ModalPage :isOpen="isModalOpen" @close="closeModal" />
   </div>
@@ -32,11 +33,11 @@ export default {
   },
   methods: {
     openModal() {
-      console.log('Abrindo o modal...');
+     
       this.isModalOpen = true;
     },
     closeModal() {
-      console.log('Fechando o modal...');
+    
       this.isModalOpen = false; 
     },
   },
